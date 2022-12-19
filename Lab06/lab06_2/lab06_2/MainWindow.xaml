@@ -1,0 +1,137 @@
+﻿<Window x:Class="lab06_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab06_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Style.Setters>
+                <Setter Property="Height" Value="100"></Setter>
+                <Setter Property="Width" Value="300"></Setter>
+                <Setter Property="Margin" Value="5"></Setter>
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush>
+                            <GradientStop Color="DarkRed" Offset="0"></GradientStop>
+                            <GradientStop Color="Pink" Offset="0.2"></GradientStop>
+                            <GradientStop Color="Pink" Offset="0.8"></GradientStop>
+                            <GradientStop Color="DarkRed" Offset="1"></GradientStop>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="Button" x:Key="MainDetail">
+            <Style.Setters>
+                <Setter Property="Background" Value="DarkRed"></Setter>
+                <Setter Property="FontSize" Value="15"></Setter>
+                <Setter Property="FontStyle" Value="Italic"></Setter>
+                <Setter Property="Margin" Value="5"></Setter>
+            </Style.Setters>
+        </Style>
+        
+        
+        <Style BasedOn="{StaticResource ResourceKey=MainDetail}" TargetType="Button" x:Key="OpenButton">
+            <EventSetter Event="Click" Handler="Button_Click_2" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="FontSize" Value="30" />
+                    </Trigger.Setters>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="Foreground" Value="ForestGreen"></Setter>
+                    </Trigger.Setters>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style BasedOn="{StaticResource ResourceKey=MainDetail}" TargetType="Button" x:Key="CloseButton">
+            <EventSetter Event="Click" Handler="Button_Click_1" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="Foreground" Value="Gold" />
+                    </Trigger.Setters>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="FontStyle" Value="Normal"></Setter>
+                    </Trigger.Setters>
+                </Trigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=text1, Path=Text}" Value=""></Condition>
+                        <Condition Binding="{Binding ElementName=text2, Path=Text}" Value=""></Condition>
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="IsEnabled" Value="False"></Setter>
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style BasedOn="{StaticResource ResourceKey=MainDetail}" TargetType="Button" x:Key="ClearButton">
+            <EventSetter Event="Click" Handler="Button_Click" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="Foreground" Value="Aqua" />
+                    </Trigger.Setters>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="FontSize" Value="40"></Setter>
+                    </Trigger.Setters>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="ComboBox" x:Key="MainCombo">
+            <Style.Setters>
+                <Setter Property="Margin" Value="5"></Setter>
+                <Setter Property="SelectedIndex" Value="0"></Setter>
+            </Style.Setters>
+        </Style>
+        <Style BasedOn="{StaticResource ResourceKey=MainCombo}" TargetType="ComboBox" x:Key="Sss">
+            <EventSetter Event="SelectionChanged" Handler="colors_SelectionChanged"></EventSetter>
+        </Style>
+        <Style BasedOn="{StaticResource ResourceKey=MainCombo}" TargetType="ComboBox" x:Key="Mmm">
+            <EventSetter Event="SelectionChanged" Handler="sizes_SelectionChanged"></EventSetter>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="Main">
+            <Setter Property="Orientation" Value="Vertical"></Setter>
+        </Style>
+        <Style BasedOn="{StaticResource ResourceKey=Main}" TargetType="StackPanel" x:Key="Child">
+            <Setter Property="Orientation" Value="Horizontal"></Setter>
+        </Style>
+    </Window.Resources>
+    <StackPanel Style="{StaticResource ResourceKey=Main}">
+        <StackPanel Style="{StaticResource ResourceKey=Child}">
+            <Button x:Name="button1" Style="{StaticResource ResourceKey=OpenButton}">Открыть</Button>
+            <Button x:Name="button2" Style="{StaticResource ResourceKey=CloseButton}">Закрыть</Button>
+            <Button x:Name="button3" Style="{StaticResource ResourceKey=ClearButton}">Очистить</Button>
+        </StackPanel>
+        <StackPanel Style="{StaticResource ResourceKey=Child}">
+            <TextBox x:Name="text1" FontFamily="{Binding ElementName=fontss, Path=SelectedItem}" FontSize="{Binding ElementName=sizes, Path=SelectedItem}"
+                     Foreground="{Binding ElementName=cool, Path=SelectedItem}"></TextBox>
+            <TextBox x:Name="text2"></TextBox>
+        </StackPanel>
+        <StackPanel Style="{StaticResource ResourceKey=Child}">
+            <ComboBox x:Name="colors" Style="{StaticResource ResourceKey=Sss}">
+                <ComboBoxItem Content="Aqua"></ComboBoxItem>
+                <ComboBoxItem Content="Blue"></ComboBoxItem>
+                <ComboBoxItem Content="Yellow"></ComboBoxItem>
+                <ComboBoxItem Content="Gray"></ComboBoxItem>
+            </ComboBox>
+            <ComboBox x:Name="sizes" Style="{StaticResource ResourceKey=Mmm}">
+                <ComboBoxItem Content="10"></ComboBoxItem>
+                <ComboBoxItem Content="20"></ComboBoxItem>
+                <ComboBoxItem Content="30"></ComboBoxItem>
+                <ComboBoxItem Content="40"></ComboBoxItem>
+                <ComboBoxItem Content="25"></ComboBoxItem>
+            </ComboBox>
+            <ComboBox x:Name="fontss" ItemsSource="{Binding Source={x:Static Fonts.SystemFontFamilies}}" SelectedIndex="0"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

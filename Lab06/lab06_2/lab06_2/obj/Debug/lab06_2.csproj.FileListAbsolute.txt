@@ -1,0 +1,16 @@
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\bin\Debug\lab06_2.exe.config
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\bin\Debug\lab06_2.exe
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\bin\Debug\lab06_2.pdb
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\obj\Debug\lab06_2.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\obj\Debug\lab06_2.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\obj\Debug\MainWindow.g.cs
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\obj\Debug\App.g.cs
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\obj\Debug\lab06_2_MarkupCompile.cache
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\obj\Debug\lab06_2_MarkupCompile.lref
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\obj\Debug\MainWindow.baml
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\obj\Debug\lab06_2.g.resources
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\obj\Debug\lab06_2.Properties.Resources.resources
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\obj\Debug\lab06_2.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\obj\Debug\lab06_2.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\obj\Debug\lab06_2.exe
+C:\Users\User\Desktop\Lab06\lab06_2\lab06_2\obj\Debug\lab06_2.pdb

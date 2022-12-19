@@ -1,0 +1,25 @@
+﻿<Window x:Class="Praktika8_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Praktika8_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Canvas>
+        <Slider x:Name="heights" Height="20" Width="150" Minimum="1" Maximum="60" Canvas.Left="0" Canvas.Top="0" ValueChanged="heights_ValueChanged"></Slider>
+        <ComboBox x:Name="colors" SelectedIndex="0" Canvas.Top="0" Canvas.Left="170" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="Red"></ComboBoxItem>
+            <ComboBoxItem Content="Blue"></ComboBoxItem>
+            <ComboBoxItem Content="Yellow"></ComboBoxItem>
+            <ComboBoxItem Content="Gray"></ComboBoxItem>
+            <ComboBoxItem Content="Green"></ComboBoxItem>
+        </ComboBox>
+        <RadioButton GroupName="ModeDraw" x:Name="option_one" Canvas.Right="10" Canvas.Top="0" Click="option_one_Click">рисование</RadioButton>
+        <RadioButton GroupName="ModeDraw" x:Name="option_two" Canvas.Right="10" Canvas.Top="15" Click="option_two_Click">редактирование</RadioButton>
+        <RadioButton GroupName="ModeDraw" x:Name="option_three" Canvas.Right="10" Canvas.Top="30" Click="option_three_Click">удаление</RadioButton>
+
+        <InkCanvas EditingMode="Ink" Canvas.Left="0" Canvas.Top="30" x:Name="draw" Height="300" Width="700">
+        </InkCanvas>
+    </Canvas>
+</Window>

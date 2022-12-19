@@ -1,0 +1,92 @@
+﻿<Window x:Class="Praktika8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Praktika8"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="ToolButton">
+            <Style.Setters>
+                <EventSetter Event="Click" Handler="Button_ClickToolBack"></EventSetter>
+                <EventSetter Event="MouseMove" Handler="Button_MouseMoveToolBack"></EventSetter>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="Button" x:Key="ToolButtonClose">
+            <Style.Setters>
+                <EventSetter Event="Click" Handler="Button_ClickToolClose"></EventSetter>
+                <EventSetter Event="MouseMove" Handler="Button_MouseMoveToolClose"></EventSetter>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="Button" x:Key="ToolButtonAbout">
+            <Style.Setters>
+                <EventSetter Event="Click" Handler="Button_ClickToolAbout"></EventSetter>
+                <EventSetter Event="MouseMove" Handler="Button_MouseMoveToolAbout"></EventSetter>
+            </Style.Setters>
+        </Style>
+        <Style  TargetType="MenuItem" x:Key="MenuButtonBack">
+            <Style.Setters>
+                <Setter Property="Header" Value="_Поменять фон"></Setter>
+                <EventSetter Event="Click" Handler="Button_ClickToolBack"></EventSetter>
+                <EventSetter Event="MouseMove" Handler="Button_MouseMoveToolBack"></EventSetter>
+            </Style.Setters>
+        </Style>
+        <Style  TargetType="MenuItem" x:Key="MenuButtonClose">
+            <Style.Setters>
+                <Setter Property="Header" Value="_Закрыть"></Setter>
+                <EventSetter Event="Click" Handler="Button_ClickToolClose"></EventSetter>
+                <EventSetter Event="MouseMove" Handler="Button_MouseMoveToolClose"></EventSetter>
+            </Style.Setters>
+        </Style>
+        <Style  TargetType="MenuItem" x:Key="MenuButtonAbout">
+            <Style.Setters>
+                <Setter Property="Header" Value="_О программе"></Setter>
+                <EventSetter Event="Click" Handler="Button_ClickToolAbout"></EventSetter>
+                <EventSetter Event="MouseMove" Handler="Button_MouseMoveToolAbout"></EventSetter>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="MenuItem" x:Key="MenuFile">
+            <Setter Property="Header" Value="_Файл"></Setter>
+        </Style>
+        <Style TargetType="Menu" x:Key="MenuMain">
+            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="BorderBrush" Value="Navy"></Setter>
+            <Setter Property="BorderThickness" Value="1"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Top"></Setter>
+        </Style>
+        <Style TargetType="ToolBar" x:Key="ToolBarMain">
+            <Setter Property="Height" Value="50"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Top"></Setter>
+        </Style>
+        <Style TargetType="StatusBar" x:Key="StatusBarMain">
+            <Setter Property="DockPanel.Dock" Value="Bottom"></Setter>
+        </Style>
+        <Style TargetType="StatusBarItem" x:Key="TextBlockMain">
+            <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+        </Style>
+    </Window.Resources>
+    <DockPanel x:Name="main_dock" LastChildFill="False">
+        <Menu x:Name="main_menu" Style="{StaticResource ResourceKey=MenuMain}">
+            <MenuItem x:Name="file" Style="{StaticResource ResourceKey=MenuFile}">
+                <MenuItem x:Name="backgro" Style="{StaticResource ResourceKey=MenuButtonBack}"/>
+                <Separator />
+                <MenuItem x:Name="close" Style="{StaticResource ResourceKey=MenuButtonClose}"/>
+            </MenuItem>
+            <MenuItem x:Name="about" Style="{StaticResource ResourceKey=MenuButtonAbout}"/>
+        </Menu>
+        <ToolBar x:Name="tools" Style="{StaticResource ResourceKey=ToolBarMain}">
+            <Button x:Name="backgroTool" Style="{StaticResource ResourceKey=ToolButton}">Поменять фон</Button>
+            <Separator/>
+            <Button x:Name="closeTool" Style="{StaticResource ResourceKey=ToolButtonClose}">Закрыть</Button>
+            <Separator/>
+            <Button x:Name="aboutTool" Style="{StaticResource ResourceKey=ToolButtonAbout}">О программе</Button>
+        </ToolBar>
+        <StatusBar Style="{StaticResource ResourceKey=StatusBarMain}">
+            <TextBlock x:Name="work">Работаем...</TextBlock>
+            <StatusBarItem Style="{StaticResource ResourceKey=TextBlockMain}">
+                <TextBlock>Why?</TextBlock>
+            </StatusBarItem>
+        </StatusBar>
+    </DockPanel>
+</Window>
